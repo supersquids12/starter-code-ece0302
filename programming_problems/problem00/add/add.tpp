@@ -1,9 +1,5 @@
 #include "add.hpp"
 
-#include <iostream>
-
-// implementation using fixed automatic storage
-
 template <typename T> Add<T>::Add() {}
 
 template <typename T> Add<T>::~Add() {}
