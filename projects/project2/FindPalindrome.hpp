@@ -18,7 +18,7 @@ private:
 	    change the signature. The method must call itself recursively.
 	    Failure to follow either of the above two rules will result in
 	    a grade of zero for the project. */
-	void recursiveFindPalindromes(std::vector<std::string> currentCandidateVector, 
+	void recursiveFindPalindromes(std::vector<std::string> candidateStringVector, 
 			   	                  std::vector<std::string> currentStringVector);
 	
 	/** function to see if a string is a palindrome (provided).
