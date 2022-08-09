@@ -19,7 +19,7 @@ public:
     bool isEmpty();
     bool retrieve(const KeyType& key, ItemType& item);
     bool remove(KeyType key);
-    void treeSort(ItemType arr[], int size);
+    void treeSort(KeyType arr[], int size);
 
 private:
     template <typename K, typename I>
