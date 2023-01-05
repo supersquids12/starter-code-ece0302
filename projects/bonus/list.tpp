@@ -40,17 +40,15 @@ std::size_t List<T>::getLength() const noexcept
 }
 
 template <typename T>
-bool List<T>::insert(std::size_t position, const T& item)
+void List<T>::insert(std::size_t position, const T& item)
 {
   //TODO
-  return true;
 }
 
 template <typename T>
-bool List<T>::remove(std::size_t position)
+void List<T>::remove(std::size_t position)
 {
   //TODO
-  return true;
 }
 
 template <typename T>
