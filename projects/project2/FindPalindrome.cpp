@@ -1,7 +1,6 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <locale> 
 #include "FindPalindrome.hpp"
 
 using namespace std;
@@ -14,9 +13,8 @@ using namespace std;
 // helper function to convert string to lower case
 static void convertToLowerCase(string & value)
 {
-	locale loc;
 	for (int i=0; i<value.size(); i++) {
-		value[i] = tolower(value[i],loc);
+		value[i] = tolower(value[i]);
 	}
 }
 
