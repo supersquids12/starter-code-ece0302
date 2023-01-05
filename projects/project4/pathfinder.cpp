@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "lib/image.h"
-#include "dynamic_array_list.hpp"
+#include "list.hpp"
 #include "queue.hpp"
 
 int main(int argc, char *argv[])

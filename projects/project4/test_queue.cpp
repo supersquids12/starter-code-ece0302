@@ -2,11 +2,11 @@
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
 
-#include "dynamic_array_list.hpp"
+#include "list.hpp"
 #include "queue.hpp"
 
 TEST_CASE("Testing all", "[queue]") {
-  Queue<int, DynamicArrayList<int>> queue;
+  Queue<int, List<int>> queue;
 
   queue.enqueue(12);
   REQUIRE(!queue.isEmpty());
@@ -32,7 +32,7 @@ TEST_CASE("Testing all", "[queue]") {
   REQUIRE_FALSE(queue.isEmpty());
   REQUIRE(queue.peekFront() == 241);
 
-  Queue<int, DynamicArrayList<int>> another_queue;
+  Queue<int, List<int>> another_queue;
   another_queue = queue;
 
   REQUIRE_FALSE(another_queue.isEmpty());
