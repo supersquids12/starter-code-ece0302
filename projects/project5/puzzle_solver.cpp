@@ -26,7 +26,7 @@ std::pair<bool, std::size_t> PuzzleSolver::search() {
   std::size_t solution_cost;
 
   frontier_queue<Puzzle> frontier;
-  std::unordered_set<Puzzle> explored;
+  //TODO: instantiate explored as an unordered_set
 
   frontier.push(initial, 0, initial.heuristic(goal));
 
@@ -39,7 +39,7 @@ std::pair<bool, std::size_t> PuzzleSolver::search() {
 
     auto node = frontier.pop();
     Puzzle value = node.getValue();
-    explored.insert(value);
+    //TODO: add state to explored 
 
     std::size_t cost = node.getPathCost();
 
@@ -55,7 +55,8 @@ std::pair<bool, std::size_t> PuzzleSolver::search() {
       std::tie(ok, result) = value.apply(static_cast<Puzzle::Action>(a));
 
       if (ok) {
-        bool inexplored = explored.count(result) != 0;
+        //TODO: define inexplored as whether the result is in explored
+        bool inexplored = false;
         bool infrontier = frontier.contains(result);
         if (!(inexplored || infrontier)) {
           frontier.push(result, cost + 1, result.heuristic(goal));
