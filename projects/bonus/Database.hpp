@@ -29,11 +29,6 @@ public:
   // return true if an entry exists associated with the input key
   bool contains(std::string key);
 
-  // return all entries in search key order: 
-  // sort by key1 if keyIndex==1, key2 if keyIndex==2
-  // key1 and key2 should be consistent with the add method parameters
-  std::vector<T> getAllEntries(int keyIndex);
-
 private:
 
   // TODO:

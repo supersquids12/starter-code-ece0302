@@ -45,9 +45,3 @@ bool Database<T>::contains(std::string key) {
     // TODO
     return false;
 }
-
-template <typename T>
-std::vector<T> Database<T>::getAllEntries(int keyIndex) {
-    // TODO    
-    return std::vector<T>();
-}
