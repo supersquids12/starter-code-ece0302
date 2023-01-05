@@ -23,13 +23,6 @@ bool XMLParser::tokenizeInputString(const std::string &inputString)
 	return false;
 }  // end
 
-// TODO: Implement a helper function to delete attributes from a START_TAG
-// or EMPTY_TAG string (you can change this...)
-static std::string deleteAttributes(std::string input)
-{
-	return input;
-}
-
 // TODO: Implement the parseTokenizedInput method here
 bool XMLParser::parseTokenizedInput()
 {
