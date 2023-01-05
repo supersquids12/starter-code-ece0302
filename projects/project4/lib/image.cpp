@@ -6,7 +6,7 @@
 Image<Pixel> readFromFile(std::string fname) {
 
   std::vector<unsigned char> raw;
-  unsigned w, h;
+  unsigned h, w;
 
   // decode the png
   unsigned error = lodepng::decode(raw, w, h, fname.c_str());
@@ -14,14 +14,14 @@ Image<Pixel> readFromFile(std::string fname) {
   if (error)
     throw std::runtime_error(lodepng_error_text(error));
 
-  Image<Pixel> im(w, h);
+  Image<Pixel> im(h, w);
   std::size_t idx = 0;
-  for (std::size_t i = 0; i < im.height(); ++i)
-    for (std::size_t j = 0; j < im.width(); ++j) {
-      im(i, j).red = raw[idx++];
-      im(i, j).green = raw[idx++];
-      im(i, j).blue = raw[idx++];
-      im(i, j).alpha = raw[idx++];
+  for (std::size_t r = 0; r < im.height(); r++)
+    for (std::size_t c = 0; c < im.width(); c++) {
+      im(r, c).red = raw[idx++];
+      im(r, c).green = raw[idx++];
+      im(r, c).blue = raw[idx++];
+      im(r, c).alpha = raw[idx++];
     }
 
   return im;
@@ -32,12 +32,12 @@ void writeToFile(const Image<Pixel> &im, std::string fname) {
   std::vector<unsigned char> raw(4 * im.width() * im.height());
 
   std::size_t idx = 0;
-  for (std::size_t i = 0; i < im.height(); ++i)
-    for (std::size_t j = 0; j < im.width(); ++j) {
-      raw[idx++] = im(i, j).red;
-      raw[idx++] = im(i, j).green;
-      raw[idx++] = im(i, j).blue;
-      raw[idx++] = im(i, j).alpha;
+  for (std::size_t r = 0; r < im.height(); r++)
+    for (std::size_t c = 0; c < im.width(); c++) {
+      raw[idx++] = im(r, c).red;
+      raw[idx++] = im(r, c).green;
+      raw[idx++] = im(r, c).blue;
+      raw[idx++] = im(r, c).alpha;
     }
 
   // encode the image

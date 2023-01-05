@@ -9,12 +9,12 @@
 
 // A simple image class templated over the pixel type T.
 // An image is a rectangular array with
-// row i, 0 <= i < width
-// column j, 0<= j < height
+// row r, 0 <= r < height
+// column c, 0<= c < width
 template <typename T> class Image {
 public:
-  // Construct an image given width and height
-  Image(std::size_t width = 0, std::size_t height = 0);
+  // Construct an image given height and width
+  Image(std::size_t height = 0, std::size_t width = 0);
 
   // get the width of the image
   std::size_t width() const;
@@ -22,15 +22,15 @@ public:
   // get the height of the image
   std::size_t height() const;
 
-  // get a reference to pixel i,j
-  // i < width or an exception is thrown
-  // j < height or an exception is thrown
-  T &operator()(std::size_t i, std::size_t j);
+  // get a reference to pixel r,c
+  // r < height or an exception is thrown
+  // c < width or an exception is thrown
+  T &operator()(std::size_t r, std::size_t c);
 
-  // get a copy of pixel i,j
-  // i < width or an exception is thrown
-  // j < height or an exception is thrown
-  T operator()(std::size_t i, std::size_t j) const;
+  // get a copy of pixel r,c
+  // r < height or an exception is thrown
+  // c < width or an exception is thrown
+  T operator()(std::size_t r, std::size_t c) const;
 
 private:
   std::size_t _width, _height;
@@ -69,31 +69,31 @@ void writeToFile(const Image<Pixel> &im, std::string fname);
 // ----------------------------------------------------------------------------
 
 template <typename T>
-Image<T>::Image(std::size_t width, std::size_t height)
-    : _width(width), _height(height) {
+Image<T>::Image(std::size_t height, std::size_t width)
+    : _height(height), _width(width) {
 
-  _data.resize(_width * _height);
+  _data.resize(_height * _width);
 }
 
 template <typename T> std::size_t Image<T>::width() const { return _width; }
 
 template <typename T> std::size_t Image<T>::height() const { return _height; }
 
-template <typename T> T &Image<T>::operator()(std::size_t i, std::size_t j) {
+template <typename T> T &Image<T>::operator()(std::size_t r, std::size_t c) {
 
-  if ((j >= _width) || (i >= _height))
+  if ((r >= _height) || (c >= _width))
     throw std::out_of_range("Image: Invalid location in operator()");
 
-  return _data[i * _width + j];
+  return _data[r * _width + c];
 }
 
 template <typename T>
-T Image<T>::operator()(std::size_t i, std::size_t j) const {
+T Image<T>::operator()(std::size_t r, std::size_t c) const {
 
-  if ((j >= _width) || (i >= _height))
+  if ((r >= _height) || (c >= _width))
     throw std::out_of_range("Image: Invalid location in operator()");
 
-  return _data[i * _width + j];
+  return _data[r * _width + c];
 }
 
 #endif // IMAGE_H
