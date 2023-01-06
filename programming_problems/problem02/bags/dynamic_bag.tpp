@@ -11,7 +11,7 @@ template<typename T>
 DynamicBag<T>::~DynamicBag(){}
   
 template<typename T>
-DynamicBag<T>& DynamicBag<T>::operator=(const DynamicBag<T> x)
+DynamicBag<T>& DynamicBag<T>::operator=(DynamicBag<T> x)
 {  
   return *this;
 }

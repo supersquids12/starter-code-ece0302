@@ -17,7 +17,7 @@ public:
   ~DynamicBag();
   
   // copy assignment
-  DynamicBag& operator=(const DynamicBag x);
+  DynamicBag& operator=(DynamicBag x);
 
   // swap for copy swap idiom
   void swap(DynamicBag& y);
