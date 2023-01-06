@@ -3,19 +3,6 @@
 template<typename T>
 LimitedSizeBag<T>::LimitedSizeBag() {}
   
-
-template<typename T>
-LimitedSizeBag<T>::LimitedSizeBag(const LimitedSizeBag& x){}
-    
-template<typename T>
-LimitedSizeBag<T>::~LimitedSizeBag(){}
-  
-template<typename T>
-LimitedSizeBag<T>& LimitedSizeBag<T>::operator=(LimitedSizeBag<T>& x)
-{  
-  return *this;
-}
-
 template<typename T>
 bool LimitedSizeBag<T>::add(const T& item)
 {

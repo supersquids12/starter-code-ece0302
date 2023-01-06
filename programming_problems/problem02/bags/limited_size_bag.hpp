@@ -10,15 +10,6 @@ public:
   // default constructor
   LimitedSizeBag();
   
-  // copy constructor
-  LimitedSizeBag(const LimitedSizeBag& x);
-    
-  // destructor
-  ~LimitedSizeBag();
-  
-  // copy assignment
-  LimitedSizeBag& operator=(LimitedSizeBag& x);
-
   // add an item to the bag
   bool add(const T & item);
   
