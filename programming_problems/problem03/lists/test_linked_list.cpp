@@ -6,5 +6,6 @@
 template class LinkedList<int>;
 
 TEST_CASE( "TODO", "[LinkedList]" ) {
-  
+
+    LinkedList<int> list;
 }
