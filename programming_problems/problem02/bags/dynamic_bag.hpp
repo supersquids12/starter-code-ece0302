@@ -20,7 +20,7 @@ public:
   DynamicBag& operator=(DynamicBag x);
 
   // swap for copy swap idiom
-  void swap(DynamicBag& y);
+  void swap(DynamicBag& x);
 
   // add an item to the bag
   bool add(const T & item);

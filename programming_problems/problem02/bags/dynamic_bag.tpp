@@ -17,7 +17,7 @@ DynamicBag<T>& DynamicBag<T>::operator=(DynamicBag<T> x)
 }
 
 template<typename T>
-void DynamicBag<T>::swap(DynamicBag<T>& y){}
+void DynamicBag<T>::swap(DynamicBag<T>& x){}
 
 template<typename T>
 bool DynamicBag<T>::add(const T& item)
