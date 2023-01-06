@@ -18,7 +18,10 @@ public:
   ~List();
   
   // copy assignment
-  List& operator=(const List& x);
+  List& operator=(List x);
+
+  // swap
+  void swap(List& x);
   
   // determine if a list is empty
   bool isEmpty() const noexcept;

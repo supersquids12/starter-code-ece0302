@@ -19,10 +19,16 @@ List<T>::List(const List<T>& x)
 }
 
 template <typename T>
-List<T>& List<T>::operator=(const List<T>& x)
+List<T>& List<T>::operator=(List<T> x)
 {
   //TODO
   return *this;
+}
+
+template <typename T>
+void List<T>::swap(List<T>& x) 
+{
+  //TODO
 }
 
 template <typename T>
