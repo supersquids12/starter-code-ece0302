@@ -20,6 +20,7 @@ public:
     bool isEmpty();
     bool retrieve(const KeyType& key, ItemType& item);
     bool remove(KeyType key);
+    void destroy();
     void treeSort(KeyType arr[], int size);
 
 private:
@@ -39,9 +40,7 @@ private:
 
     Node<KeyType, ItemType>* root;
 
-    void destroy();
-
-    void inorder(Node<KeyType, ItemType>* curr, Node<KeyType, ItemType>*& in,
+     void inorder(Node<KeyType, ItemType>* curr, Node<KeyType, ItemType>*& in,
         Node<KeyType, ItemType>*& parent);
 
     void search(KeyType key, Node<KeyType, ItemType>*& curr,
