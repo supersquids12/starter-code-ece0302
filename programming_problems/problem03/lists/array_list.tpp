@@ -7,12 +7,15 @@ template <typename T>
 ArrayList<T>::~ArrayList() {}
 
 template <typename T>
-ArrayList<T>::ArrayList(const ArrayList & rhs){}
+ArrayList<T>::ArrayList(const ArrayList& rhs){}
 
 template <typename T>
-ArrayList<T> & ArrayList<T>::operator=(const ArrayList & rhs){
+ArrayList<T>& ArrayList<T>::operator=(ArrayList rhs){
   return *this;
 }
+
+template <typename T>
+void ArrayList<T>::swap(ArrayList& rhs) {}
 
 template <typename T>
 bool ArrayList<T>::isEmpty() const noexcept {

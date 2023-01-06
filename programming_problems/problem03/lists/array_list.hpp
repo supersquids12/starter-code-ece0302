@@ -15,10 +15,13 @@ public:
   ~ArrayList();
 
   // copy constructor
-  ArrayList(const ArrayList & rhs);
+  ArrayList(const ArrayList& rhs);
 
   // copy assignment
-  ArrayList & operator=(const ArrayList & rhs);
+  ArrayList& operator=(ArrayList rhs);
+
+  // swap 
+  void swap(ArrayList& rhs);
   
   // determine if a list is empty
   bool isEmpty() const noexcept;
