@@ -4,17 +4,18 @@
 
 #include <stack>
 #include <cassert>
+#include <cstdlib>
 
 template <typename KeyType, typename ItemType>
 class BinarySearchTree
 {
 public:
     BinarySearchTree();
-    BinarySearchTree(const BinarySearchTree<KeyType, ItemType>& rhs);
-    BinarySearchTree<KeyType, ItemType>& operator=(
-        const BinarySearchTree<KeyType, ItemType>& rhs);
+    BinarySearchTree(const BinarySearchTree& rhs);
+    BinarySearchTree& operator=(BinarySearchTree rhs);
     ~BinarySearchTree();
 
+    void swap(BinarySearchTree& rhs);
     bool insert(const KeyType& key, const ItemType& item);
     bool isEmpty();
     bool retrieve(const KeyType& key, ItemType& item);
@@ -38,7 +39,6 @@ private:
 
     Node<KeyType, ItemType>* root;
 
-    void clone(Node<KeyType, ItemType>* rhs);
     void destroy();
 
     void inorder(Node<KeyType, ItemType>* curr, Node<KeyType, ItemType>*& in,
