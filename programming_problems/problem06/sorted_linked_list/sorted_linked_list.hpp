@@ -20,7 +20,7 @@ public:
   SortedLinkedList(const SortedLinkedList & x);
 
   // copy assignment
-  SortedLinkedList& operator=(const SortedLinkedList& x);
+  SortedLinkedList& operator=(SortedLinkedList x);
 
   // destructor
   ~SortedLinkedList();

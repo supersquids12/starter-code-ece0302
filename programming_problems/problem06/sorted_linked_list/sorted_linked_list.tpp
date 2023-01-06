@@ -19,7 +19,7 @@ SortedLinkedList<T>::SortedLinkedList(const SortedLinkedList<T> & x):
 }
 
 template <typename T>
-SortedLinkedList<T>& SortedLinkedList<T>::operator=(const SortedLinkedList<T>& x)
+SortedLinkedList<T>& SortedLinkedList<T>::operator=(SortedLinkedList<T> x)
 {
   LinkedList<T>::operator=(x);
   return *this;
