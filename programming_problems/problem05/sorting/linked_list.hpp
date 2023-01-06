@@ -19,7 +19,10 @@ public:
   ~LinkedList();
   
   // copy assignment
-  LinkedList& operator=(const LinkedList& x);
+  LinkedList& operator=(LinkedList x);
+
+  // swap
+  void swap(LinkedList& x);
   
   // determine if a list is empty
   bool isEmpty() const noexcept;
