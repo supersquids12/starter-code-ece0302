@@ -13,7 +13,7 @@ SortedList<T, L>::SortedList(const SortedList<T, L> & x)
 }
 
 template <typename T, typename L>
-SortedList<T, L>& SortedList<T, L>::operator=(const SortedList<T, L>& x)
+SortedList<T, L>& SortedList<T, L>::operator=(SortedList<T, L> x)
 {
   plist = x.plist;
   return *this;

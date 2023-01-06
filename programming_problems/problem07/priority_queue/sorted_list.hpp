@@ -18,7 +18,7 @@ public:
   SortedList(const SortedList & x);
 
   // copy assignment
-  SortedList& operator=(const SortedList& x);
+  SortedList& operator=(SortedList x);
 
   // destructor
   ~SortedList();
